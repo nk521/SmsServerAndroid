@@ -1,3 +1,20 @@
+/*
+ * SMS Server — HTTP API on the phone for sending SMS from a computer.
+ * Copyright (C) 2026 Nikhil Kumar Singh
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published
+ * by the Free Software Foundation, either version 3 of the License,
+ * or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
 package dev.nkmason.smsserverandroid
 
 import android.Manifest
@@ -145,12 +162,15 @@ object ServerManager {
             "/status" ->
                 if (method == "GET") 200 to statusJson(context)
                 else 405 to errorJson("Use GET for /status")
+
             "/log" ->
                 if (method == "GET") 200 to logJson()
                 else 405 to errorJson("Use GET for /log")
+
             "/send" ->
                 if (method == "POST") sendSms(context, body)
                 else 405 to errorJson("Use POST with a JSON body for /send")
+
             else -> 404 to errorJson("Unknown endpoint. GET / lists endpoints.")
         }
     }
