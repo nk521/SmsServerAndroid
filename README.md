@@ -49,3 +49,7 @@ background.
 
 - Needs a phone with a SIM; messages go through the carrier.
 - Plain HTTP on the LAN. Do not expose it to the internet.
+
+## License
+
+GPL-3.0. See [LICENSE](LICENSE).
