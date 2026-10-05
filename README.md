@@ -25,6 +25,11 @@ APK: `app/build/outputs/apk/debug/app-debug.apk`
 
 ## Install
 
+Download the APK from the mirrored GitHub repo releases page:
+https://github.com/nk521/SmsServerAndroid/releases
+
+Or build and install yourself:
+
 ```bash
 adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```
